@@ -1,0 +1,53 @@
+<div class="row">
+    <div class="col-sm-12">
+      <mat-card>
+        <h2>Liste des Services</h2>
+        <table class="table table-bordered table-striped">
+         <tr>
+            <td style="padding: 5px;">
+              <input type="text"
+                     [(ngModel)]="service.abreviation"
+                     class="form-control">
+            </td>
+            <td style="padding: 5px;">
+              <input type="text"
+                     [(ngModel)]="service.libelle"
+                     class="form-control">
+            </td>
+          
+            <td style="padding: 5px;">
+              <button class="btn btn-primary"
+                      *ngIf="!service.id"
+                      [disabled]="!service.abreviation || !service.libelle"
+                      >Ajouter</button>
+              <button class="btn btn-success"
+                      *ngIf="service.id"
+                      >Modifier</button>
+            </td>
+          </tr>
+          
+          <tr>
+            <th>ID</th>
+            <th>Abreviation</th>
+            <th>Libelle</th>
+            <th>Actions</th>
+          </tr>
+          <tr *ngFor="let ser of services">
+            <td>{{ser.id}}</td>
+            <td>{{ser.abreviation}}</td>
+            <td>{{ser.libelle}}</td>
+            <td>
+              <i class="fa fa-edit"
+                 (click)="fillForm(ser)"
+                 style="font-size: 21px"></i>&nbsp;&nbsp;
+              <i class="fa fa-trash"
+                 (click)="delete(ser.id)"
+                 style="font-size: 21px; color: orangered"></i>
+            </td>
+          </tr>
+
+        </table>
+      </mat-card>
+    </div>
+  </div>
+  
