@@ -15,7 +15,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     LoginComponent,
     HomeComponent,
     SideBarComponent,
-    NavBarComponent
+    NavBarComponent,
   ],
   imports: [
     CommonModule,

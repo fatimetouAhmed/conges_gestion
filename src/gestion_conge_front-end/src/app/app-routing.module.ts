@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ServicesListeComponent } from './pages/gestion_conges/components/services-liste/services-liste.component';
 import {PageNotFoundComponent} from "./pages/page-not-found/page-not-found.component";
-import {AppGuard} from "./services/app.guard";
+
 
 const routes: Routes = [
   {
@@ -17,7 +18,8 @@ const routes: Routes = [
       ),
   },
   {path: '**', redirectTo: '404'},
-  {path: '404', component: PageNotFoundComponent}
+  {path: '404', component: PageNotFoundComponent},
+  { path: 'services', component: ServicesListeComponent }
 ];
 
 @NgModule({

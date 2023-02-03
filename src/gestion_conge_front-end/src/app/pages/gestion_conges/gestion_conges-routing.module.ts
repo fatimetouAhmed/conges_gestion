@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {MdlListComponent} from "./components/mdl-list/mdl-list.component";
 import { ServicesListeComponent } from './components/services-liste/services-liste.component';
 
 const routes: Routes = [

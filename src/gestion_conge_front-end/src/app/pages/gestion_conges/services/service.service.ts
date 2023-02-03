@@ -18,7 +18,10 @@ export class ServiceService {
   }
 
   addServices(service: Iservices) {
+    console.log(service);
+    
     return this.http.post("http://localhost:8990/services/create", service);
+
   }
   deleteServices(idService: number) {
     let params  = new HttpParams();

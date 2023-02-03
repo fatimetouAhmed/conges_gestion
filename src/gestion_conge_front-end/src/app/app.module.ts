@@ -7,6 +7,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {PageNotFoundComponent} from './pages/page-not-found/page-not-found.component';
 import {RouterModule} from "@angular/router";
 import {SharedModule} from "./common/shared/shared.module";
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {SharedModule} from "./common/shared/shared.module";
     AppRoutingModule,
     BrowserAnimationsModule,
     RouterModule,
-    SharedModule
+    SharedModule,
+  FormsModule
   ],
   providers: [],
   exports: [

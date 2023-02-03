@@ -31,6 +31,13 @@ const routes: Routes = [
             (m) => m.Gestion_congesModule
           ),
       },
+      {
+        path: 'gestion_conges',
+        loadChildren: () =>
+          import('../gestion_conges/gestion_conges.module').then(
+            (m) => m.Gestion_congesModule
+          ),
+      }, 
     ]
   },
   {
