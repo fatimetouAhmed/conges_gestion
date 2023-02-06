@@ -1,7 +1,9 @@
 package com.gestion_conge_backend.modelGeneral.services;
 
 import com.gestion_conge_backend.data.entities.CongeEntity;
+import com.gestion_conge_backend.data.entities.EmploiyeeEntity;
 import com.gestion_conge_backend.data.repository.CongeRepository;
+import com.gestion_conge_backend.data.repository.EmploiyeeRepository;
 import com.gestion_conge_backend.modelGeneral.dtos.Congedto;
 import org.springframework.stereotype.Service;
 
@@ -11,8 +13,10 @@ import java.util.stream.Collectors;
 @Service
 public class CongeService {
     private final CongeRepository congeRepository;
-    public CongeService(CongeRepository congeRepository) {
+    private final EmploiyeeRepository emploiyeRepository;
+    public CongeService(CongeRepository congeRepository,EmploiyeeRepository emploiyeRepository) {
         this.congeRepository = congeRepository;
+        this.emploiyeRepository=emploiyeRepository;
     }
 
     public CongeEntity creer(CongeEntity congeEntity) {
@@ -78,4 +82,14 @@ public CongeEntity modifierStatus(int id, String status) {
                     }
             ).orElseThrow(()-> new RuntimeException("Conge non trouve"));
 }
+    public EmploiyeeEntity modifierEmploiyeStatus(int id, String status) {
+       EmploiyeeEntity emploiye=new EmploiyeeEntity();
+        return emploiyeRepository.findById(id)
+                .map(
+                        e->{
+                            e.setStatus(emploiye.getStatus());
+                            return emploiyeRepository.save(e);
+                        }
+                ).orElseThrow(()-> new RuntimeException("status non trouve"));
+    }
 }

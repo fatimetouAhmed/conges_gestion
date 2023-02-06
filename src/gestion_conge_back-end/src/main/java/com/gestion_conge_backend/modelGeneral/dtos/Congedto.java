@@ -14,6 +14,7 @@ public class Congedto {
     private Integer id;
     private Date dateDebut;
     private Date dateFin;
+    private String status;
     private Integer emploiyee;
     private String emploiyeeNom;
     private Integer typeConge;

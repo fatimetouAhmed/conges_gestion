@@ -41,7 +41,7 @@ public class CongeEntity {
     }
 
     @Basic
-    @Column(name = "date_debut")
+    @Column(name = "dateDebut")
     public Date getDateDebut() {
         return dateDebut;
     }
@@ -51,7 +51,7 @@ public class CongeEntity {
     }
 
     @Basic
-    @Column(name = "date_fin")
+    @Column(name = "dateFin")
     public Date getDateFin() {
         return dateFin;
     }
@@ -71,7 +71,7 @@ public class CongeEntity {
     }
 
     @Basic
-    @Column(name = "type_conge")
+    @Column(name = "typeConge")
     public Integer getTypeConge() {
         return typeConge;
     }
@@ -111,7 +111,7 @@ public class CongeEntity {
         this.emploiyeeByIdemploiyee = emploiyeeByIdemploiyee;
     }
     @ManyToOne
-    @JoinColumn(name = "type_conge", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
+    @JoinColumn(name = "typeConge", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
     public TypeCongeEntity getTypeCongeByIdtypeConge() {
         return typeCongeByIdtypeConge;
     }
@@ -124,6 +124,7 @@ public class CongeEntity {
                 .id(conge.getId())
                 .dateDebut(conge.getDateDebut())
                 .dateFin(conge.getDateFin())
+                .status(conge.getStatus())
                 .emploiyee(conge.getEmploiyee())
                 .emploiyeeNom(conge.getEmploiyeeByIdemploiyee().getNom())
                 .typeConge(conge.getTypeConge())

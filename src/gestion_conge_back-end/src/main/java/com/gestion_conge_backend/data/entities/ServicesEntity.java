@@ -1,5 +1,6 @@
 package com.gestion_conge_backend.data.entities;
 
+import com.gestion_conge_backend.referentiel.dtos.RefDto;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -61,5 +62,11 @@ public class ServicesEntity {
     @Override
     public int hashCode() {
         return Objects.hash(id, abreviation, libelle);
+    }
+    public RefDto toServiceDto(ServicesEntity servicesEntity) {
+        return RefDto.builder()
+                .id(servicesEntity.getId())
+                .lib(servicesEntity.getAbreviation())
+                .build();
     }
 }

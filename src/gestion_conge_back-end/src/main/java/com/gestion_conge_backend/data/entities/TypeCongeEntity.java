@@ -1,5 +1,6 @@
 package com.gestion_conge_backend.data.entities;
 
+import com.gestion_conge_backend.referentiel.dtos.RefDto;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -51,4 +52,11 @@ public class TypeCongeEntity {
     public int hashCode() {
         return Objects.hash(id, libelle);
     }
+    public RefDto toCongesDto(TypeCongeEntity typeCongeEntity) {
+        return RefDto.builder()
+                .id(typeCongeEntity.getId())
+                .lib(typeCongeEntity.getLibelle())
+                .build();
+    }
+
 }

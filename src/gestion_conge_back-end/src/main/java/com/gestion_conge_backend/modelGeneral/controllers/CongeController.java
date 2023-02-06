@@ -58,4 +58,8 @@ public class CongeController {
         public void updateStatus(@PathVariable int id,@RequestParam(value = "status") String status) {
       congeService.modifierStatus(id,status);
     }
+@PutMapping("/updateEmploiyeStatus/{id}")
+    public void updateEmploiyeStatus(@PathVariable int id,@RequestParam(value = "status") String status) {
+        congeService.modifierEmploiyeStatus(id,status);
+    }
 }

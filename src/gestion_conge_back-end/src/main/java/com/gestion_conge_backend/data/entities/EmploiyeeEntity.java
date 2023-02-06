@@ -1,6 +1,8 @@
 package com.gestion_conge_backend.data.entities;
 
 import com.gestion_conge_backend.modelGeneral.dtos.Emploiyeedto;
+import com.gestion_conge_backend.modelGeneral.dtos.TypeCongedto;
+import com.gestion_conge_backend.referentiel.dtos.RefDto;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -154,4 +156,10 @@ public class EmploiyeeEntity {
                 .build();
     }
 
+    public RefDto toCongesDto(EmploiyeeEntity emploiyeeEntity) {
+        return RefDto.builder()
+                .id(emploiyeeEntity.getId())
+                .lib(emploiyeeEntity.getNom())
+                .build();
+    }
 }
