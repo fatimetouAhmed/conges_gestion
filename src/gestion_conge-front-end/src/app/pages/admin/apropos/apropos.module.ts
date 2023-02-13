@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { AproposRoutingModule } from './apropos-routing.module';
 import { AproposComponent } from './apropos/apropos.component';
-import {SharedModule} from "../../common/shared/shared.module";
 
 
 @NgModule({
@@ -13,7 +12,6 @@ import {SharedModule} from "../../common/shared/shared.module";
   imports: [
     CommonModule,
     AproposRoutingModule,
-    SharedModule
   ]
 })
 export class AproposModule { }
